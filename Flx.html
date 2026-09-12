@@ -1,43 +1,117 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
-
-<style>
-
-
-
-header {
-  display: flex; /* 开启 Flex 布局 */
-  flex-direction: column; /* 子元素垂直排列（标题在上，导航在下） */
-  align-items: center; /* 子元素水平居中（关键） */
-  gap: 16px; /* 标题和导航之间的间距（可选，优化布局） */
-}
-
-/* 可选：让导航链接横向分布且居中 */
-nav a {
-  margin: 0 12px; /* 链接之间的间距 */
-  text-decoration: none;
-  color: #333;
-}
-</style>
-
     <meta charset="UTF-8">
-    <title>联系我们</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Li Muyang</title>
+    <style>
+        /* 全局基础样式，与主页完全一致 */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f5f5f7; /* 苹果官网经典浅灰底色 */
+            color: #1d1d1f;
+            line-height: 1.6;
+        }
+
+        /* 顶部导航栏，与主页完全一致 */
+        header {
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px 20px 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        header h1 {
+            margin: 0 0 15px 0;
+            font-size: 28px;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #515154;
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: #0071e3; /* 苹果蓝 */
+        }
+
+        /* 主体联系区域 */
+        main {
+            max-width: 600px; /* 联系页面窄一点更精致 */
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .contact-card {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+        }
+
+        .contact-card h2 {
+            margin-top: 0;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .contact-card p {
+            color: #515154;
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        /* 邮箱按钮样式 */
+        .email-button {
+            display: inline-block;
+            background-color: #0071e3;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 12px 28px;
+            border-radius: 980px; /* 苹果风格全圆角 */
+            font-weight: 500;
+            font-size: 16px;
+            transition: background-color 0.2s, transform 0.2s;
+        }
+
+        .email-button:hover {
+            background-color: #0077ed;
+            transform: scale(1.02);
+        }
+    </style>
 </head>
 <body>
-    <!-- 页面内容 -->
+
     <header>
-        <h1>联系我们</h1>
+        <h1>Contact</h1>
         <nav>
-            <a href="index.html" target="_self">返回首页</a>
+            <a href="index.html">Home</a>
+            <a href="Flx.html">Contact</a>
         </nav>
-    <br>
+    </header>
+    
+    <main>
+        <div class="contact-card">
+            <h2>Get in Touch</h2>
+            <p>I am always open to discussing photography, programming, aviation, or creative projects.</p>
+            
+            <!-- 点击邮箱可自动唤起邮件客户端 -->
+            <a href="mailto:limuyang3u8633@outlook.com" class="email-button">
+                limuyang3u8633@outlook.com
+            </a>
+        </div>
+    </main>
 
-    <article><h2>我的电子邮箱为：limuyang3u8633@outlook.com</h2><article>
-        <h3>欢迎大家联系！！！</h3>
 </body>
-
 </html>
-
-
-
