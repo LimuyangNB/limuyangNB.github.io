@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Li Muyang | Creative Portfolio</title>
+    <title>Li Muyang | 6th-Grade Creator</title>
     <style>
         /* 全局基础样式 */
         body {
@@ -23,6 +23,7 @@
             align-items: center;
             padding: 40px 20px 20px 20px;
             box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            text-align: center;
         }
 
         header h1 {
@@ -69,44 +70,53 @@
         /* 图片网格排版 */
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 自适应列数 */
-            gap: 20px;
-            margin-top: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* 自适应列数 */
+            gap: 30px 20px;
+            margin-top: 25px;
+        }
+
+        /* 包裹图片和文字的网格项 */
+        .photo-item {
+            display: flex;
+            flex-direction: column;
         }
 
         /* 包裹图片的链接标签样式 */
-        .gallery a {
-            display: block; /* 让链接占据整个网格位置 */
+        .photo-item a {
+            display: block; 
             border-radius: 12px;
             overflow: hidden; /* 隐藏超出圆角的部分 */
-            box-shadow: 0 4px 10px rgba(0,0,0,0.08); /* 默认阴影 */
-            transition: box-shadow 0.3s ease; /* 阴影过渡动画 */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08); 
+            transition: box-shadow 0.3s ease, transform 0.4s ease;
         }
 
-        /* 鼠标悬浮在链接上时，阴影加深 */
-        .gallery a:hover {
+        .photo-item a:hover {
             box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            transform: translateY(-4px);
         }
 
         /* 图片本身样式 */
-        .gallery img {
+        .photo-item img {
             width: 100%;
-            height: 220px; /* 固定高度，统一大小 */
+            height: 200px; /* 固定高度，统一大小 */
             object-fit: cover; /* 自动裁剪以填满，绝不拉伸变形 */
-            display: block; /* 消除图片底部的微小间隙 */
-            transition: transform 0.4s ease; /* 放大过渡动画 */
+            display: block; 
         }
 
-        /* 鼠标悬浮时图片放大 */
-        .gallery a:hover img {
-            transform: scale(1.05); /* 放大1.05倍 */
+        /* 图片下方的小字注解 */
+        .caption {
+            font-size: 13px;
+            color: #86868b;
+            margin-top: 10px;
+            text-align: center;
+            font-weight: 400;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Welcome to Li Muyang's Portfolio</h1>
+        <h1>6th Grader. Photographer. Developer.</h1>
         <nav>
             <a href="#home">Home</a>
             <a href="Flx.html" target="_self">Contact</a>
@@ -115,30 +125,44 @@
     
     <main>
         <section id="about">
-            <h2>Introduction</h2>
-            <p>I am a 6th-grade student from Zhejiang, China. I am passionate about programming and aviation, and I deeply long for the clear blue sky.</p>
-            <p>I am also a photography enthusiast and the official photographer of my school. I shoot with a second-hand Canon 750D.</p>
+            <h2>About Me</h2>
+            <p>I am a 6th-grade student from Hangzhou, China. I shoot with a second-hand Canon 750D and I built this website from scratch.</p>
+            <p><strong>I am currently preparing an "Apple Event" style video for my school's Student Council Election.</strong></p>
         </section>
         
         <section id="portfolio">
             <h2>My Photography</h2>
             <div class="gallery">
-                <!-- 注意：去掉了前面的绝对网址，直接用相对路径 -->
-                <a href="pri/c1.JPG" target="_blank">
-                    <img src="pri/c1.JPG" alt="Hangzhou scenery 1">
-                </a>
-                <a href="pri/c2.JPG" target="_blank">
-                    <img src="pri/c2.JPG" alt="Hangzhou scenery 2">
-                </a>
-                <a href="pri/c3.JPG" target="_blank">
-                    <img src="pri/c3.JPG" alt="Hangzhou scenery 3">
-                </a>
-                <a href="pri/c4.JPG" target="_blank">
-                    <img src="pri/c4.JPG" alt="Hangzhou scenery 4">
-                </a>
-                <a href="pri/c5.JPG" target="_blank">
-                    <img src="pri/c5.JPG" alt="Hangzhou scenery 5">
-                </a>
+                <div class="photo-item">
+                    <a href="pri/c1.JPG" target="_blank">
+                        <img src="pri/c1.JPG" alt="Hangzhou red leaves">
+                    </a>
+                    <p class="caption">Shot with 18-55mm kit lens.</p>
+                </div>
+                <div class="photo-item">
+                    <a href="pri/c2.JPG" target="_blank">
+                        <img src="pri/c2.JPG" alt="Window silhouette">
+                    </a>
+                    <p class="caption">Window light and shadows.</p>
+                </div>
+                <div class="photo-item">
+                    <a href="pri/c3.JPG" target="_blank">
+                        <img src="pri/c3.JPG" alt="Lake and mountain">
+                    </a>
+                    <p class="caption">The view from my hometown.</p>
+                </div>
+                <div class="photo-item">
+                    <a href="pri/c4.JPG" target="_blank">
+                        <img src="pri/c4.JPG" alt="Sunset lake">
+                    </a>
+                    <p class="caption">Sunset over the lake.</p>
+                </div>
+                <div class="photo-item">
+                    <a href="pri/c5.JPG" target="_blank">
+                        <img src="pri/c5.JPG" alt="My desk setup">
+                    </a>
+                    <p class="caption">My not-so-fancy desk setup. It gets the job done.</p>
+                </div>
             </div>
         </section>
     </main>
