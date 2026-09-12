@@ -66,7 +66,7 @@
             font-weight: 600;
         }
 
-        /* 图片网格排版（确保图片大小统一、不变形） */
+        /* 图片网格排版 */
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 自适应列数 */
@@ -74,12 +74,32 @@
             margin-top: 20px;
         }
 
+        /* 包裹图片的链接标签样式 */
+        .gallery a {
+            display: block; /* 让链接占据整个网格位置 */
+            border-radius: 12px;
+            overflow: hidden; /* 隐藏超出圆角的部分 */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08); /* 默认阴影 */
+            transition: box-shadow 0.3s ease; /* 阴影过渡动画 */
+        }
+
+        /* 鼠标悬浮在链接上时，阴影加深 */
+        .gallery a:hover {
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        /* 图片本身样式 */
         .gallery img {
             width: 100%;
             height: 220px; /* 固定高度，统一大小 */
             object-fit: cover; /* 自动裁剪以填满，绝不拉伸变形 */
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            display: block; /* 消除图片底部的微小间隙 */
+            transition: transform 0.4s ease; /* 放大过渡动画 */
+        }
+
+        /* 鼠标悬浮时图片放大 */
+        .gallery a:hover img {
+            transform: scale(1.05); /* 放大1.05倍 */
         }
     </style>
 </head>
@@ -104,12 +124,22 @@
         <section id="portfolio">
             <h2>My Photography</h2>
             <div class="gallery">
-                <!-- 图片链接完全按照你当前可用的绝对路径填写，已添加 referrerpolicy 防止防盗链拦截 -->
-                <img src="https://limuyangnb.github.io/username.github.io/pri/c1.JPG" alt="Hangzhou scenery 1" referrerpolicy="no-referrer">
-                <img src="https://limuyangnb.github.io/username.github.io/pri/c2.JPG" alt="Hangzhou scenery 2" referrerpolicy="no-referrer">
-                <img src="https://limuyangnb.github.io/username.github.io/pri/c3.JPG" alt="Hangzhou scenery 3" referrerpolicy="no-referrer">
-                <img src="https://limuyangnb.github.io/username.github.io/pri/c4.JPG" alt="Hangzhou scenery 4" referrerpolicy="no-referrer">
-                <img src="https://limuyangnb.github.io/username.github.io/pri/c5.JPG" alt="Hangzhou scenery 5" referrerpolicy="no-referrer">
+                <!-- 包裹在 a 标签中，target="_blank" 表示新标签页打开，href 直接放图片原链接 -->
+                <a href="https://limuyangnb.github.io/username.github.io/pri/c1.JPG" target="_blank">
+                    <img src="https://limuyangnb.github.io/username.github.io/pri/c1.JPG" alt="Hangzhou scenery 1">
+                </a>
+                <a href="https://limuyangnb.github.io/username.github.io/pri/c2.JPG" target="_blank">
+                    <img src="https://limuyangnb.github.io/username.github.io/pri/c2.JPG" alt="Hangzhou scenery 2">
+                </a>
+                <a href="https://limuyangnb.github.io/username.github.io/pri/c3.JPG" target="_blank">
+                    <img src="https://limuyangnb.github.io/username.github.io/pri/c3.JPG" alt="Hangzhou scenery 3">
+                </a>
+                <a href="https://limuyangnb.github.io/username.github.io/pri/c4.JPG" target="_blank">
+                    <img src="https://limuyangnb.github.io/username.github.io/pri/c4.JPG" alt="Hangzhou scenery 4">
+                </a>
+                <a href="https://limuyangnb.github.io/username.github.io/pri/c5.JPG" target="_blank">
+                    <img src="https://limuyangnb.github.io/username.github.io/pri/c5.JPG" alt="Hangzhou scenery 5">
+                </a>
             </div>
         </section>
     </main>
