@@ -1,34 +1,93 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-
-<style>
-header {
-  display: flex; /* 开启 Flex 布局 */
-  flex-direction: column; /* 子元素垂直排列（标题在上，导航在下） */
-  align-items: center; /* 子元素水平居中（关键） */
-  gap: 16px; /* 标题和导航之间的间距（可选，优化布局） */
-}
-
-/* 可选：让导航链接横向分布且居中 */
-nav a {
-  margin: 0 12px; /* 链接之间的间距 */
-  text-decoration: none;
-  color: #333;
-}
-</style>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>个人简历</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Li Muyang 的个人网站</title>
+    <style>
+        /* 基础页面设置 */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #fbfbfd;
+            color: #1d1d1f;
+            line-height: 1.6;
+        }
+
+        /* 顶部导航栏 */
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            padding: 40px 20px 20px 20px;
+            background-color: #ffffff;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+            font-weight: 600;
+        }
+
+        nav a {
+            margin: 0 12px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: #0071e3; /* 苹果蓝 */
+        }
+
+        /* 主体内容 */
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section h2 {
+            text-align: center;
+            margin-top: 40px;
+            font-weight: 600;
+        }
+
+        section p {
+            font-size: 16px;
+        }
+
+        /* 图片画廊排版（核心修复） */
+        .gallery {
+            display: grid;
+            /* 自动适应屏幕宽度，最小宽度280px，自动均匀拉伸 */
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px; /* 图片之间的间距 */
+            margin-top: 20px;
+        }
+
+        .gallery img {
+            width: 100%; /* 撑满网格，绝不会溢出 */
+            height: 200px; /* 固定高度，让排版整齐 */
+            object-fit: cover; /* 裁剪图片以填满区域，不变形 */
+            border-radius: 12px; /* 圆角 */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* 优雅的阴影 */
+            transition: transform 0.3s ease; /* 鼠标悬停动画 */
+        }
+
+        .gallery img:hover {
+            transform: scale(1.03); /* 鼠标放上去微微放大 */
+        }
+    </style>
 </head>
 <body>
-    
-    
 
     <header>
-        <h1>欢迎来到Li Muyang的网站</h1>
+        <h1>欢迎来到 Li Muyang 的网站</h1>
         <nav>
             <a href="#home">首页</a> | 
             <a href="#about">关于</a> | 
@@ -45,21 +104,16 @@ nav a {
         
         <section>
             <h2>图片展示</h2>
-            <img src="https://limuyangnb.github.io/username.github.io/pri/c1.JPG" alt="Hangzhou scenery 1">
-            <img src="https://limuyangnb.github.io/username.github.io/pri/c2.JPG" alt="Hangzhou scenery 2">
-            <img src="https://limuyangnb.github.io/username.github.io/pri/c3.JPG" alt="Hangzhou scenery 3">
-            <img src="https://limuyangnb.github.io/username.github.io/pri/c4.JPG" alt="Hangzhou scenery 4">
-            <img src="https://limuyangnb.github.io/username.github.io/pri/c5.JPG" alt="Hangzhou scenery 5">
+            <div class="gallery">
+                <!-- 图片链接完全按照你当前可用的绝对路径填写 -->
+                <img src="https://limuyangnb.github.io/username.github.io/pri/c1.JPG" alt="Hangzhou scenery 1">
+                <img src="https://limuyangnb.github.io/username.github.io/pri/c2.JPG" alt="Hangzhou scenery 2">
+                <img src="https://limuyangnb.github.io/username.github.io/pri/c3.JPG" alt="Hangzhou scenery 3">
+                <img src="https://limuyangnb.github.io/username.github.io/pri/c4.JPG" alt="Hangzhou scenery 4">
+                <img src="https://limuyangnb.github.io/username.github.io/pri/c5.JPG" alt="Hangzhou scenery 5">
+            </div>
         </section>
-        
-        
     </main>
-    
-   
-    
-    <script src="script.js"></script>
+
 </body>
-
 </html>
-
-
